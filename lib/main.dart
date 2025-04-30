@@ -53,7 +53,12 @@ class _HomePageState extends State<HomePage> {
         // Wait for Firebase to initialize before displaying the UI
         future: Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
         builder: (context, snapshot) {
-          return Column(
+          switch(snapshot.connectionState){
+            
+          
+            case ConnectionState.done:
+              // TODO: Handle this case.
+         return Column(
             children: [
               // Email input field
               TextField(
@@ -87,6 +92,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           );
+          default:
+            return const Text("Loadind....");
+          }
+          
         },
       ),
     );
