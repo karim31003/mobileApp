@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'CarSearchScreen.dart';
-
-
+import 'brands_screen.dart';
+import 'Category.dart';
+import 'Contact.dart';
 
 class EdmundsApp extends StatelessWidget {
   @override
@@ -25,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
     HomeScreen(),
     CarSearchScreen(),
     // DashboardScreen(),
-    MoreScreen(),
+    ContactUsPage(),
   ];
 
   @override
@@ -116,7 +117,7 @@ class HomeScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => MakeModelPage()),
+                          MaterialPageRoute(builder: (context) => BrandsScreen()),
                         );
                       },
                       child: Text(
@@ -130,29 +131,16 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 12),
                     ElevatedButton(
-                      onPressed: () {
-                        showModalBottomSheet(
-                          context: context,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-                          ),
-                          builder: (context) {
-                            return Container(
-                              padding: EdgeInsets.all(16),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: const [
-                                  ListTile(title: Text("SUV")),
-                                  ListTile(title: Text("Sedan")),
-                                  ListTile(title: Text("Truck")),
-                                  ListTile(title: Text("Convertible")),
-                                ],
-                              ),
-                            );
-                          },
+                     onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Category()),
                         );
                       },
-                      child: Text("Vechicle Category",style: TextStyle(color: Colors.white,fontSize: 16)),
+                      child: Text(
+                        "Category Search",
+                        style: TextStyle(color: Colors.white,fontSize: 16),
+                      ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
                         minimumSize: Size(double.infinity, 50),
