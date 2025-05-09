@@ -20,17 +20,18 @@ class CarDetailScreen extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blueAccent,
         title: Text('$brand $model'),
         elevation: 0,
         actions: [
-          IconButton(
-            icon: const Icon(Icons.favorite_border),
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Added to favorites')),
-              );
-            },
-          ),
+          // IconButton(
+          //   icon: const Icon(Icons.favorite_border),
+          //   onPressed: () {
+          //     ScaffoldMessenger.of(context).showSnackBar(
+          //       const SnackBar(content: Text('Added to favorites')),
+          //     );
+          //   },
+          // ),
         ],
       ),
       body: SingleChildScrollView(

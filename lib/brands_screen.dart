@@ -8,7 +8,7 @@ class BrandsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final brands = brandModels.keys.toList();
     return Scaffold(
-      appBar: AppBar(title: const Text('Select Brand')),
+      appBar: AppBar(title: const Text('Select Brand'),backgroundColor: Colors.blueAccent),
       body: ListView.builder(
         itemCount: brands.length,
         itemBuilder: (ctx, i) => ListTile(

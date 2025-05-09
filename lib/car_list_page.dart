@@ -7,61 +7,103 @@ class CarListPage extends StatelessWidget {
 
   CarListPage({required this.selectedCategory});
 
-  List<Car> getCarsForCategory(String category) {
-    Car car;
-    switch (category) {
-      case 'SUV':
-        car = Car(
-          imageUrl: 'assets/mustang.jpg',
-          name: 'BMW X5',
+ List<Car> getCarsForCategory(String category) {
+  switch (category) {
+    case 'SUV':
+      return [
+        Car(
+          imageUrl: 'assets/X6.jpg',
+          name: 'BMW X6',
           type: 'SUV',
           price: 75000,
-        );
-        break;
-      case 'Sedan':
-        car = Car(
-          imageUrl: 'assets/mustang.jpg',
+        ),
+        Car(
+          imageUrl: 'assets/XCeed.jpg',
+          name: 'KIA XCeed',
+          type: 'SUV',
+          price: 18000,
+        ),
+        Car(
+          imageUrl: 'assets/Sportage.jpg',
+          name: 'KIA Sportage',
+          type: 'SUV',
+          price: 28000,
+        ),
+        Car(
+          imageUrl: 'assets/Q8.jpg',
+          name: 'Audi Q8',
+          type: 'SUV',
+          price: 80000,
+        ),
+      ];
+    case 'Sedan':
+      return [
+        Car(
+          imageUrl: 'assets/toyota_corolla.jpg',
           name: 'Toyota Corolla',
           type: 'Sedan',
           price: 25000,
-        );
-        break;
-      case 'Coupe':
-        car = Car(
-          imageUrl: 'assets/mustang1.jpg',
+        ),
+        Car(
+          imageUrl: 'assets/honda_accord.jpg',
+          name: 'Honda Accord',
+          type: 'Sedan',
+          price: 30000,
+        ),
+      ];
+    case 'Coupe':
+      return [
+        Car(
+          imageUrl: 'assets/ford_mustang.jpg',
           name: 'Ford Mustang',
           type: 'Coupe',
           price: 55000,
-        );
-        break;
-      case 'Hatchback':
-        car = Car(
-          imageUrl: 'assets/mustang1.jpg',
+        ),
+        Car(
+          imageUrl: 'assets/chevy_camaro.jpg',
+          name: 'Chevrolet Camaro',
+          type: 'Coupe',
+          price: 53000,
+        ),
+      ];
+    case 'Hatchback':
+      return [
+        Car(
+          imageUrl: 'assets/honda_civic.jpg',
           name: 'Honda Civic',
           type: 'Hatchback',
           price: 23000,
-        );
-        break;
-      default:
-        car = Car(
-          imageUrl: 'assets/mustang.jpg',
+        ),
+        Car(
+          imageUrl: 'assets/volkswagen_golf.jpg',
+          name: 'Volkswagen Golf',
+          type: 'Hatchback',
+          price: 25000,
+        ),
+      ];
+    default:
+      return [
+        Car(
+          imageUrl: 'assets/unknown_car.jpg',
           name: 'Unknown Car',
           type: category,
           price: 0,
-        );
-    }
-    return List.generate(4, (_) => car); // تكرار لنفس النوع كتجربة
+        ),
+      ];
   }
+}
 
   @override
   Widget build(BuildContext context) {
     final cars = getCarsForCategory(selectedCategory);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Cars: $selectedCategory')),
+      appBar: AppBar(title: Text('Cars: $selectedCategory',style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0), fontSize: 20)),backgroundColor: Colors.blueAccent,),
+      backgroundColor: Colors.white,
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
         itemCount: cars.length,
+        
         itemBuilder: (context, index) {
           final car = cars[index];
           return GestureDetector(
@@ -93,7 +135,7 @@ class CarListPage extends StatelessWidget {
                       children: [
                         Text(car.name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                         Text('Type: ${car.type}'),
-                        Text('Price: \$${car.price.toStringAsFixed(0)}'),
+                        Text('Price: \€ ${car.price.toStringAsFixed(0)}'),
                       ],
                     ),
                   )

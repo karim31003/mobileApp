@@ -7,7 +7,8 @@ class CarTypesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Car Types')),
+      
+      appBar: AppBar(title: const Text('Car Types'),backgroundColor: Colors.blueAccent),
       body: ListView.builder(
         itemCount: categories.length,
         itemBuilder: (context, index) {
@@ -15,9 +16,11 @@ class CarTypesPage extends StatelessWidget {
           return ListTile(
             title: Text(type),
             trailing: const Icon(Icons.arrow_forward_ios),
+           
             onTap: () {
               Navigator.push(
                 context,
+                
                 MaterialPageRoute(
                   builder: (_) => CarListPage(selectedCategory: type),
                 ),

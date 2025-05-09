@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'CarSearchScreen.dart';
 import 'brands_screen.dart';
-import 'Category.dart';
 import 'Contact.dart';
 import 'car_types_page.dart';
 class EdmundsApp extends StatelessWidget {
@@ -98,21 +97,22 @@ class HomeScreen extends StatelessWidget {
           children: [
             Text(
               "Find a Great Deal",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Colors.white),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 45), // 2l masafa been 2l box w find great deal
             Center(
               child: Container(
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: Colors.white,
+                  
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text("Shop By", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                    SizedBox(height: 16),
+                    Text("Shop By", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                    SizedBox(height: 16),// 2l masafa been 2l Shop by w Model search
                     ElevatedButton(
                       onPressed: () {
                         Navigator.push(
@@ -129,7 +129,7 @@ class HomeScreen extends StatelessWidget {
                         minimumSize: Size(double.infinity, 50),
                       ),
                     ),
-                    SizedBox(height: 12),
+                    SizedBox(height: 17),// 2l masafa been 2l Model search w Category search
                     ElevatedButton(
                      onPressed: () {
                         Navigator.push(
@@ -158,54 +158,54 @@ class HomeScreen extends StatelessWidget {
 }
 
 // باقي الصفحات في شريط التنقل السفلي
-class ResearchScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Research")),
-      body: Center(child: Text("Research Page", style: TextStyle(fontSize: 24))),
-    );
-  }
-}
+// class ResearchScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text("Research")),
+//       body: Center(child: Text("Research Page", style: TextStyle(fontSize: 34))),
+//     );
+//   }
+// }
 
-class DashboardScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Dashboard")),
-      body: Center(child: Text("Dashboard Page", style: TextStyle(fontSize: 24))),
-    );
-  }
-}
+// class DashboardScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text("Dashboard")),
+//       body: Center(child: Text("Dashboard Page", style: TextStyle(fontSize: 24))),
+//     );
+//   }
+// }
 
-class MoreScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("More")),
-      backgroundColor: Colors.blueAccent,
-      body: Center(child: Text("More Page", style: TextStyle(fontSize: 24))),
-    );
-  }
-}
+// class MoreScreen extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text("More")),
+//       backgroundColor: Colors.blueAccent,
+//       body: Center(child: Text("More Page", style: TextStyle(fontSize: 24))),
+//     );
+//   }
+// }
 
 // صفحة MAKE & MODEL
-class MakeModelPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Select Make & Model"),
-        backgroundColor: Colors.blueAccent,
-      ),
-      body: ListView(
-        children: const [
-          ListTile(title: Text("Toyota - Corolla")),
-          ListTile(title: Text("Honda - Civic")),
-          ListTile(title: Text("Ford - Focus")),
-          ListTile(title: Text("BMW - 3 Series")),
-        ],
-      ),
-    );
-  }
-}
+// class MakeModelPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Select Make & Model"),
+//         backgroundColor: Colors.blueAccent,
+//       ),
+//       body: ListView(
+//         children: const [
+//           ListTile(title: Text("Toyota - Corolla")),
+//           ListTile(title: Text("Honda - Civic")),
+//           ListTile(title: Text("Ford - Focus")),
+//           ListTile(title: Text("BMW - 3 Series")),
+//         ],
+//       ),
+//     );
+//   }
+// }
