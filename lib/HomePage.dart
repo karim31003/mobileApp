@@ -3,7 +3,7 @@ import 'CarSearchScreen.dart';
 import 'brands_screen.dart';
 import 'Category.dart';
 import 'Contact.dart';
-
+import 'car_types_page.dart';
 class EdmundsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -134,7 +134,7 @@ class HomeScreen extends StatelessWidget {
                      onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Category()),
+                          MaterialPageRoute(builder: (context) => CarTypesPage()),
                         );
                       },
                       child: Text(
@@ -183,6 +183,7 @@ class MoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("More")),
+      backgroundColor: Colors.blueAccent,
       body: Center(child: Text("More Page", style: TextStyle(fontSize: 24))),
     );
   }
@@ -195,7 +196,7 @@ class MakeModelPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Select Make & Model"),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.blueAccent,
       ),
       body: ListView(
         children: const [
