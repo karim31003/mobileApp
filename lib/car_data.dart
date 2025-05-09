@@ -68,7 +68,7 @@ final Map<String, Map<String, String>> modelDetails = {
   "Sportage": {
     "price": "28000 €",
     "description": "Kia Sportage Comfort Suv",
-    "specs": "4.8L/100km • 78g/km CO₂",
+    "specs": "6.8L/100km • from 0 to 100 in 8.9s",
     "image": "assets/Sportage.jpg"
   },
   "XCeed": {

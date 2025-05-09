@@ -68,7 +68,7 @@ class _ContactFormState extends State<ContactForm> {
       
       child: ListView(
         children: [
-          const SizedBox(height: 50.0),
+          const SizedBox(height: 60.0),
           TextFormField(
             controller: _nameController,
             decoration: _inputDecoration('Name'),
@@ -94,11 +94,11 @@ class _ContactFormState extends State<ContactForm> {
               return null;
             },
           ),
-          const SizedBox(height: 32.0),
+          const SizedBox(height: 62.0),
           TextFormField(
             controller: _messageController,
             decoration: _inputDecoration('Please write your complaint in details'),
-            maxLines: 5,
+            maxLines: 8,
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
                 return 'Message is required';
@@ -106,7 +106,7 @@ class _ContactFormState extends State<ContactForm> {
               return null;
             },
           ),
-          const SizedBox(height: 32.0),
+          const SizedBox(height: 62.0),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
                backgroundColor: Colors.blue, // 
