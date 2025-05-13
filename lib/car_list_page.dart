@@ -98,7 +98,7 @@ class CarListPage extends StatelessWidget {
     final cars = getCarsForCategory(selectedCategory);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Cars: $selectedCategory',style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0), fontSize: 20)),backgroundColor: Colors.blueAccent,),
+      appBar: AppBar(title: Text('Cars: $selectedCategory',style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255), fontSize: 20)),backgroundColor: Colors.blueAccent,),
       backgroundColor: Colors.white,
       body: ListView.builder(
         padding: const EdgeInsets.all(16),

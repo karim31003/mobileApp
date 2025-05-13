@@ -6,7 +6,7 @@ class ContactUsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue, //  AppBar
-        title: const Text('Contact Us'),
+        title: const Text('Contact Us',style: TextStyle(color: Colors.white)),
       ),
       body: GestureDetector(
         

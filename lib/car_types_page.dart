@@ -8,7 +8,7 @@ class CarTypesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      appBar: AppBar(title: const Text('Car Types'),backgroundColor: Colors.blueAccent),
+      appBar: AppBar(title: const Text('Car Types',style: TextStyle(color: Colors.white)),backgroundColor: Colors.blueAccent),
       body: ListView.builder(
         itemCount: categories.length,
         itemBuilder: (context, index) {

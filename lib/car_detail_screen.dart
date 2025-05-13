@@ -21,9 +21,10 @@ class CarDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-        title: Text('$brand $model'),
+        title: Text('$brand $model',style: TextStyle(color: Colors.white)),
         elevation: 0,
         actions: [
+          //dont delete
           // IconButton(
           //   icon: const Icon(Icons.favorite_border),
           //   onPressed: () {
