@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:one/MoreScreen.dart';
 import 'CarSearchScreen.dart';
 import 'brands_screen.dart';
 import 'Contact.dart';
 import 'car_types_page.dart';
-class EdmundsApp extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
     HomeScreen(),
     CarSearchScreen(),
     // DashboardScreen(),
-    ContactUsPage(),
+    Morescreen(),
   ];
 
   @override
@@ -93,7 +94,7 @@ class HomeScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               "Find a Great Deal",

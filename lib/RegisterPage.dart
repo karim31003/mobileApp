@@ -105,7 +105,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   }
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context)=>EdmundsApp())
+                    MaterialPageRoute(builder: (context)=>Home())
                 );
                 },
                 child: const Text('Register'), // Button text

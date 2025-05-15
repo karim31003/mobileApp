@@ -17,6 +17,7 @@ class ContactUsPage extends StatelessWidget {
         ),
       ),
     );
+    
   }
 }
 
@@ -95,9 +96,18 @@ class _ContactFormState extends State<ContactForm> {
             },
           ),
           const SizedBox(height: 62.0),
+          const Text(
+            ' Please write your complaint in details',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.normal,
+              color: Colors.blueAccent,
+            ),
+          ),
+          const SizedBox(height: 8.0), // Add spacing between label and text field
           TextFormField(
             controller: _messageController,
-            decoration: _inputDecoration('Please write your complaint in details'),
+            decoration: _inputDecoration(''), // Remove placeholder text
             maxLines: 8,
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
