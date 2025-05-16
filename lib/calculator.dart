@@ -2,38 +2,37 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 
-
-class CarCalculatorApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Car Affordability Calculator',
-      theme: ThemeData(
-        primaryColor: Color(0xFF1877F2),
-        // scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.blueAccent,
-          foregroundColor: Color.fromARGB(255, 255, 255, 255),
-          // elevation: 1,
-          centerTitle: false,
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          filled: true,
-          fillColor: Color(0xFFF0F2F5),
-          contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(14),
-            borderSide: BorderSide.none,
-          ),
-        ),
-        textTheme: TextTheme(
-          bodyMedium: TextStyle(color: Colors.black87),
-        ),
-      ),
-      home: CarCalculatorPage(),
-    );
-  }
-}
+// class CarCalculatorApp extends StatelessWidget {  
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Car Affordability Calculator',
+//       theme: ThemeData(
+//         primaryColor: Color(0xFF1877F2),
+//         scaffoldBackgroundColor: Colors.white,
+//         appBarTheme: AppBarTheme(
+//           backgroundColor: Colors.white,
+//           foregroundColor: Color(0xFF1877F2),
+//           elevation: 1,
+//           centerTitle: false,
+//         ),
+//         inputDecorationTheme: InputDecorationTheme(
+//           filled: true,
+//           fillColor: Color(0xFFF0F2F5),
+//           contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+//           border: OutlineInputBorder(
+//             borderRadius: BorderRadius.circular(14),
+//             borderSide: BorderSide.none,
+//           ),
+//         ),
+//         textTheme: TextTheme(
+//           bodyMedium: TextStyle(color: Colors.black87),
+//         ),
+//       ),
+//       home: CarCalculatorPage(),
+//     );
+//   }
+// }
 
 class CarCalculatorPage extends StatefulWidget {
   @override
@@ -50,11 +49,11 @@ class _CarCalculatorPageState extends State<CarCalculatorPage> {
   String _result = '';
 
   final List<Map<String, dynamic>> _installmentOptions = [
-    {'label': '6 months - 5% interest ', 'value': 6, 'rate': 5.0},
+    {'label': '6 months - 5% interest 🌟', 'value': 6, 'rate': 5.0},
     {'label': '12 months - 8% interest', 'value': 12, 'rate': 8.0},
     {'label': '24 months - 12% interest', 'value': 24, 'rate': 12.0},
     {'label': '36 months - 16% interest', 'value': 36, 'rate': 16.0},
-    {'label': '48 months - 20% interest ', 'value': 48, 'rate': 20.0},
+    {'label': '48 months - 20% interest', 'value': 48, 'rate': 20.0},
   ];
 
   void _calculateAffordability() {
@@ -72,7 +71,8 @@ class _CarCalculatorPageState extends State<CarCalculatorPage> {
 
     final maxAffordablePayment = monthlyIncome * (rateLimit / 100);
     final selectedOption = _installmentOptions.firstWhere(
-            (option) => option['value'] == _installmentMonths);
+          (option) => option['value'] == _installmentMonths,
+    );
     final interestRate = selectedOption['rate'] / 100 / 12;
     final n = _installmentMonths;
     final loanAmount = carPrice - downPayment;
@@ -85,13 +85,13 @@ class _CarCalculatorPageState extends State<CarCalculatorPage> {
 
     setState(() {
       _result = monthlyPayment <= maxAffordablePayment
-          ? ' You can afford this car.\n\n'
+          ? '✅ You can afford this car.\n\n'
           '• Monthly Payment: \$${monthlyPayment.toStringAsFixed(2)}\n'
           '• Total Paid: \$${totalPrice.toStringAsFixed(2)}\n'
           '• Down Payment: \$${downPayment.toStringAsFixed(2)}\n'
           '• Interest Rate: ${selectedOption['rate']}%\n\n'
-          ' Shorter durations = less interest!'
-          : ' This car exceeds your affordable monthly rate.\n\n'
+          '💡 Shorter durations = less interest!'
+          : '❌ This car exceeds your affordable monthly rate.\n\n'
           '• Monthly Payment: \$${monthlyPayment.toStringAsFixed(2)}\n'
           '• Your Max Affordable: \$${maxAffordablePayment.toStringAsFixed(2)}\n'
           'Try reducing the price or choosing a shorter plan.';
@@ -102,8 +102,16 @@ class _CarCalculatorPageState extends State<CarCalculatorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        
         title: Text('Car Affordability Calculator'),
-      
+        backgroundColor: Colors.blueAccent,
+        foregroundColor: Color(0xFFffffff),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -157,7 +165,7 @@ class _CarCalculatorPageState extends State<CarCalculatorPage> {
             Center(
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blueAccent,
+                  backgroundColor: Color(0xFF1877F2),
                   foregroundColor: Colors.white,
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 14),
                   shape: RoundedRectangleBorder(
@@ -166,7 +174,7 @@ class _CarCalculatorPageState extends State<CarCalculatorPage> {
                   elevation: 4,
                 ),
                 onPressed: _calculateAffordability,
-                // icon: Icon(Icons.check_circle_outline),
+                icon: Icon(Icons.check_circle_outline),
                 label: Text(
                   'Check Affordability',
                   style: TextStyle(fontSize: 16),
@@ -188,8 +196,7 @@ class _CarCalculatorPageState extends State<CarCalculatorPage> {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color:
-                      _result.contains('❌') ? Colors.red : Colors.green[800],
+                      color: _result.contains('❌') ? Colors.red : Colors.green[800],
                     ),
                     textAlign: TextAlign.center,
                   ),

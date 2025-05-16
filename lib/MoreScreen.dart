@@ -46,11 +46,10 @@ class Morescreen
   ),
   onPressed: () {
     Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => CarCalculatorApp(),
-      ),
-    );
+  context,
+  MaterialPageRoute(builder: (context) => CarCalculatorPage()),
+);
+   
   },
   icon: Icon(
     Icons.calculate,
