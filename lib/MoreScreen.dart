@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:one/Contact.dart';
+import 'package:one/calculator.dart';
+import 'RegisterPage.dart';
 
 class Morescreen
     extends
@@ -46,7 +48,7 @@ class Morescreen
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ContactUsPage(),
+        builder: (context) => CarCalculatorApp(),
       ),
     );
   },
@@ -88,6 +90,37 @@ class Morescreen
     size: 32,
   ),
   label: Text('  Contact Us',style: TextStyle(color: Colors.blueAccent,fontSize: 18)
+  )
+  ),const Divider(
+    color: Color.fromARGB(255, 215, 215, 215),
+    indent: 50,
+    endIndent: 50,
+  ),
+  ///////////////
+   ElevatedButton.icon(
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.transparent, // Makes the background transparent
+    shadowColor: Colors.transparent, // Removes any shadow
+    elevation: 0, // Ensures no shadow effect
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.zero, // Removes border radius
+      side: BorderSide.none, // Removes the border completely
+    ),
+  ),
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => RegisterScreen(),
+      ),
+    );
+  },
+  icon: Icon(
+    Icons.logout,
+    color: const Color.fromARGB(255, 255, 0, 0),
+    size: 32,
+  ),
+  label: Text('  Logout',style: TextStyle(color: const Color.fromARGB(255, 255, 0, 0),fontSize: 18)
   )
   ),
   // const Divider(

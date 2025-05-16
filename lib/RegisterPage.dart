@@ -29,6 +29,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text("Register Page", style: TextStyle(color: Colors.white)), // AppBar title
         backgroundColor: Colors.blue.shade600, // Set background color
       ),

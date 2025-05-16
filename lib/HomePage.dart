@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:one/MoreScreen.dart';
 import 'CarSearchScreen.dart';
 import 'brands_screen.dart';
-import 'Contact.dart';
+import 'calculator.dart';
 import 'car_types_page.dart';
+
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
