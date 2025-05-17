@@ -12,7 +12,7 @@ class _CarSearchScreenState extends State<CarSearchScreen> {
     'Alfa Romeo Giulia': {
       'brand': 'Alfa Romeo',
       'model': 'Giulia',
-      'image': '../assets/Alfa Romeo Giulia.jpg',
+      'image': 'assets/stelvio.jpg',
       'price': '45.480 €',
       'description': 'Giulia Veloce 2.0l AT8 280PS "Leder"LED"Navi',
       'specs': '8,0 l/100 km kombiniert · 182 g/km CO₂-Emissionen',

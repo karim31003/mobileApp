@@ -7,4 +7,4 @@ void main() {
     home: const RegisterScreen(), // Set RegisterScreen as the start screen
     debugShowCheckedModeBanner: false,
   ));
-}//version 0.1.6 beta 
+}//version 0.1.7 beta 
