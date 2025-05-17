@@ -21,6 +21,7 @@ class CarDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
+        foregroundColor: Color(0xFFffffff),
         title: Text('$brand $model',style: TextStyle(color: Colors.white)),
         elevation: 0,
         actions: [

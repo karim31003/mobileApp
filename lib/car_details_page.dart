@@ -9,7 +9,8 @@ class CarDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(car.name,style: TextStyle(color: Colors.white))),
+      appBar: AppBar(title: Text(car.name,style: TextStyle(color: Colors.white)) ,
+      foregroundColor: Color(0xFFffffff)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(

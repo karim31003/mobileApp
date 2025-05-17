@@ -1,38 +1,47 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+void main() {
+  runApp(CarCalculatorApp());
+}
 
-// class CarCalculatorApp extends StatelessWidget {  
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Car Affordability Calculator',
-//       theme: ThemeData(
-//         primaryColor: Color(0xFF1877F2),
-//         scaffoldBackgroundColor: Colors.white,
-//         appBarTheme: AppBarTheme(
-//           backgroundColor: Colors.white,
-//           foregroundColor: Color(0xFF1877F2),
-//           elevation: 1,
-//           centerTitle: false,
-//         ),
-//         inputDecorationTheme: InputDecorationTheme(
-//           filled: true,
-//           fillColor: Color(0xFFF0F2F5),
-//           contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-//           border: OutlineInputBorder(
-//             borderRadius: BorderRadius.circular(14),
-//             borderSide: BorderSide.none,
-//           ),
-//         ),
-//         textTheme: TextTheme(
-//           bodyMedium: TextStyle(color: Colors.black87),
-//         ),
-//       ),
-//       home: CarCalculatorPage(),
-//     );
-//   }
-// }
+class CarCalculatorApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Car Affordability Calculator',
+      theme: ThemeData(
+        primaryColor: Color(0xFF1877F2),
+        scaffoldBackgroundColor: Color(0xFFEAF3FB),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.white,
+          foregroundColor: Color(0xFF1877F2),
+          elevation: 2,
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            color: Color(0xFF1877F2),
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding: EdgeInsets.symmetric(vertical: 14, horizontal: 18),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(14),
+            borderSide: BorderSide.none,
+          ),
+          labelStyle: TextStyle(color: Color(0xFF1877F2), fontWeight: FontWeight.w600),
+        ),
+        textTheme: TextTheme(
+          bodyMedium: TextStyle(color: Color(0xFF1877F2), fontSize: 16),
+        ),
+      ),
+      home: CarCalculatorPage(),
+    );
+  }
+}
 
 class CarCalculatorPage extends StatefulWidget {
   @override
@@ -98,68 +107,98 @@ class _CarCalculatorPageState extends State<CarCalculatorPage> {
     });
   }
 
+  Widget _buildInputCard({
+    required IconData icon,
+    required String label,
+    required TextEditingController controller,
+  }) {
+    return Card(
+      elevation: 3,
+      margin: EdgeInsets.only(bottom: 14),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 6),
+        child: TextField(
+          controller: controller,
+          keyboardType: TextInputType.number,
+          style: TextStyle(color: Color(0xFF1877F2)),
+          decoration: InputDecoration(
+            icon: Icon(icon, color: Color(0xFF1877F2)),
+            labelText: label,
+            border: InputBorder.none,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF90C0F4),
+      
       appBar: AppBar(
-        
-        title: Text('Car Affordability Calculator'),
-        backgroundColor: Colors.blueAccent,
-        foregroundColor: Color(0xFFffffff),
+        title: Text('Car Calculator'),
+        foregroundColor: Color(0xFF1877F2),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16),
         child: ListView(
           children: [
-            TextField(
+            _buildInputCard(
+              icon: Icons.directions_car,
+              label: 'Car Price',
               controller: _carPriceController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Car Price'),
             ),
-            SizedBox(height: 12),
-            TextField(
+            _buildInputCard(
+              icon: Icons.attach_money,
+              label: 'Down Payment (Optional)',
               controller: _downPaymentController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Down Payment (Optional)'),
             ),
-            SizedBox(height: 12),
-            TextField(
+            _buildInputCard(
+              icon: Icons.account_balance_wallet,
+              label: 'Monthly Income',
               controller: _monthlyIncomeController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Your Monthly Income'),
+            ),
+            _buildInputCard(
+              icon: Icons.percent,
+              label: 'Affordable % of Income',
+              controller: _acceptableRateController,
+              
             ),
             SizedBox(height: 12),
-            TextField(
-              controller: _acceptableRateController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Allowed % of Income for Payment'),
-            ),
-            SizedBox(height: 20),
-            DropdownButtonFormField<int>(
-              value: _installmentMonths,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
+            Card(
+              elevation: 3,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
+                child: DropdownButtonFormField<int>(
+                  value: _installmentMonths,
+                  decoration: InputDecoration(
+                    labelText: 'Installment Duration',
+                    labelStyle: TextStyle(color: Color(0xFF1877F2), fontWeight: FontWeight.w600),
+                    border: InputBorder.none,
+                  ),
+                  dropdownColor: Colors.white,
+                  iconEnabledColor: Color(0xFF1877F2),
+                  style: TextStyle(color: Color(0xFF1877F2)),
+                  items: _installmentOptions.map((option) {
+                    return DropdownMenuItem<int>(
+                      value: option['value'],
+                      child: Text(option['label'], style: TextStyle(color: Color(0xFF1877F2))),
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      _installmentMonths = value!;
+                    });
+                  },
                 ),
-                labelText: 'Installment Duration',
               ),
-              items: _installmentOptions.map((option) {
-                return DropdownMenuItem<int>(
-                  value: option['value'],
-                  child: Text(option['label']),
-                );
-              }).toList(),
-              onChanged: (value) {
-                setState(() {
-                  _installmentMonths = value!;
-                });
-              },
             ),
             SizedBox(height: 25),
             Center(
@@ -167,9 +206,9 @@ class _CarCalculatorPageState extends State<CarCalculatorPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF1877F2),
                   foregroundColor: Colors.white,
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   elevation: 4,
                 ),
@@ -177,15 +216,15 @@ class _CarCalculatorPageState extends State<CarCalculatorPage> {
                 icon: Icon(Icons.check_circle_outline),
                 label: Text(
                   'Check Affordability',
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
             SizedBox(height: 30),
             if (_result.isNotEmpty)
               Card(
-                color: _result.contains('❌') ? Colors.red[50] : Colors.green[50],
-                elevation: 2,
+                color: _result.contains('❌') ? Colors.red[50] : Colors.blue[50],
+                elevation: 3,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
@@ -196,7 +235,7 @@ class _CarCalculatorPageState extends State<CarCalculatorPage> {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: _result.contains('❌') ? Colors.red : Colors.green[800],
+                      color: Color(0xFF1877F2),
                     ),
                     textAlign: TextAlign.center,
                   ),

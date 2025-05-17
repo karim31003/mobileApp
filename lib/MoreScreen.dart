@@ -31,9 +31,12 @@ class Morescreen
          3.0,
         ),
         child: Column(
+          
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 8),
+            SizedBox(height: 8,
+            width: double.infinity,
+            ),
             ElevatedButton.icon(
   style: ElevatedButton.styleFrom(
     backgroundColor: Colors.transparent, // Makes the background transparent
@@ -65,6 +68,7 @@ class Morescreen
     endIndent: 50,
   ),
   ///////////////////////////////////////////////////////////////////////////////////////
+
   ElevatedButton.icon(
   style: ElevatedButton.styleFrom(
     backgroundColor: Colors.transparent, // Makes the background transparent

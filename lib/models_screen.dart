@@ -9,7 +9,7 @@ class ModelsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final models = brandModels[brand] ?? [];
     return Scaffold(
-      appBar: AppBar(title: Text('$brand Models',style: TextStyle(color: Colors.white)),backgroundColor: Colors.blueAccent),
+      appBar: AppBar(title: Text('$brand Models',style: TextStyle(color: Colors.white)),backgroundColor: Colors.blueAccent, foregroundColor: Color(0xFFffffff),),
 
       body: ListView.builder(
         itemCount: models.length,
