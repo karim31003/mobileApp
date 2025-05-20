@@ -7,4 +7,15 @@ void main() {
     home: const RegisterScreen(), // Set RegisterScreen as the start screen
     debugShowCheckedModeBanner: false,
   ));
-}//version 0.1.7 beta 
+}//version 0.1.8 beta 
+
+//next updates 
+//add login page
+//edit description page 
+//edit search by name 
+//add recent page 
+//edit contact us
+//edit calc
+//add more cars 
+//link all search ways to one file 
+//rewrite the code with ai 
