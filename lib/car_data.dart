@@ -21,13 +21,13 @@ final Map<String, Map<String, String>> modelDetails = {
     "price": "54000 €",
     "description": "Giulia 2.0L 280PS Q4 Veloce",
     "specs": "7.8L/100km • 180g/km CO₂",
-    "image": "assets/stelvio.jpg"
+    "image": "assets/giulia.png"
   },
   "4C Coupe": {
     "price": "54000 €",
     "description": "4C Coupe 2.0L 280PS Q4 Veloce",
     "specs": "7.8L/100km • 180g/km CO₂",
-    "image": "assets/stelvio.jpg"
+    "image": "assets/4c.jpg"
   },
   "A3": {
     "price": "32000 €",
@@ -39,13 +39,13 @@ final Map<String, Map<String, String>> modelDetails = {
     "price": "45000 €",
     "description": "Audi A4 40 TFSI S tronic advanced",
     "specs": "6.2L/100km • 140g/km CO₂",
-    "image": "assets/a4.jpg"
+    "image": "assets/a3.jpg"
   },
   "Q5": {
     "price": "52000 €",
     "description": "Audi Q5 45 TFSI quattro",
     "specs": "6.9L/100km • 158g/km CO₂",
-    "image": "assets/a4.jpg"
+    "image": "assets/q5.jpg"
   },
   "Q8": {
     "price": "78000 €",
@@ -57,7 +57,7 @@ final Map<String, Map<String, String>> modelDetails = {
     "price": "62000 €",
     "description": "Ford Mustang GT 5.0 V8 450PS",
     "specs": "11.5L/100km • 270g/km CO₂",
-    "image": "assets/mustang.jpg"
+    "image": "assets/musta.jpeg"
   },
   "Corolla": {
     "price": "28000 €",

@@ -39,14 +39,14 @@ class CarListPage extends StatelessWidget {
     case 'Sedan':
       return [
         Car(
-          imageUrl: 'assets/toyota_corolla.jpg',
-          name: 'Toyota Corolla',
+          imageUrl: 'assets/a4.jpg',
+          name: 'Audi A3',
           type: 'Sedan',
           price: 25000,
         ),
         Car(
-          imageUrl: 'assets/honda_accord.jpg',
-          name: 'Honda Accord',
+          imageUrl: 'assets/a3.jpg',
+          name: 'Audi A4',
           type: 'Sedan',
           price: 30000,
         ),
@@ -54,8 +54,8 @@ class CarListPage extends StatelessWidget {
     case 'Coupe':
       return [
         Car(
-          imageUrl: 'assets/ford_mustang.jpg',
-          name: 'Ford Mustang',
+          imageUrl: 'assets/4c.jpg',
+          name: 'Alfa Romeo 4c',
           type: 'Coupe',
           price: 55000,
         ),
@@ -83,12 +83,12 @@ class CarListPage extends StatelessWidget {
       ];
     default:
       return [
-        Car(
-          imageUrl: 'assets/unknown_car.jpg',
-          name: 'Unknown Car',
-          type: category,
-          price: 0,
-        ),
+        // Car(
+        //   imageUrl: 'assets/unknown_car.jpg',
+        //   name: 'Unknown Car',
+        //   type: category,
+        //   price: 0,
+        // ),
       ];
   }
 }
@@ -98,7 +98,7 @@ class CarListPage extends StatelessWidget {
     final cars = getCarsForCategory(selectedCategory);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Cars: $selectedCategory',style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255), fontSize: 20)),backgroundColor: Colors.blueAccent,),
+      appBar: AppBar(title: Text('Cars: $selectedCategory',style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255), fontSize: 20)),backgroundColor: Colors.blueAccent,foregroundColor: Colors.white,),
       backgroundColor: Colors.white,
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
