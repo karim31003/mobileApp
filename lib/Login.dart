@@ -80,6 +80,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Login Page', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blueAccent,
       ),

@@ -120,7 +120,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
             ),
             Container(
-            height: 20,
+            height: 30,
             ),
             // Button to register a new user
             SizedBox(

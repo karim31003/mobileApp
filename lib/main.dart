@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
     );
   }
-}//version 0.1.8 beta 
+}//version 0.1.9 beta 
 
 //next updates 
 //add login page

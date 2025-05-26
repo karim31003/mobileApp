@@ -3,6 +3,7 @@ import 'package:one/Contact.dart';
 import 'package:one/Login.dart';
 import 'package:one/calculator.dart';
 import 'RegisterPage.dart';
+import 'Area.dart';
 
 class Morescreen extends StatelessWidget {
   const Morescreen({super.key});
@@ -100,9 +101,8 @@ class Morescreen extends StatelessWidget {
               color: Color.fromARGB(255, 215, 215, 215),
               height: 1,
             ),
-            
-            // Third Button
-            SizedBox(
+            //Area
+              SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
@@ -119,8 +119,43 @@ class Morescreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Login()),
+                    MaterialPageRoute(builder: (context) => Area()),
                   );
+                },
+                icon: Icon(
+                  Icons.rectangle_outlined,
+                  color: Colors.blueAccent,
+                  size: 32,
+                ),
+                label: Text(
+                  '  Area',
+                  style: TextStyle(color: Colors.blueAccent, fontSize: 18),
+                ),
+              ),
+            ),
+            const Divider(
+              color: Color.fromARGB(255, 215, 215, 215),
+              height: 1,
+            ),
+            // Third Button
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  shadowColor: Colors.transparent,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                    side: BorderSide.none,
+                  ),
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.all(16),
+                ),
+                onPressed: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => Login()),
+                (Route<dynamic> route) => false,);//remove all routes
                 },
                 icon: Icon(
                   Icons.logout,
