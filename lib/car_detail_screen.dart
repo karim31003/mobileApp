@@ -4,7 +4,7 @@ import 'car_data.dart';
 class CarDetailScreen extends StatelessWidget {
   final String brand, model;
   const CarDetailScreen({super.key, required this.brand, required this.model});
-  
+
   @override
   Widget build(BuildContext context) {
     final details = modelDetails[model];
@@ -17,41 +17,28 @@ class CarDetailScreen extends StatelessWidget {
         body: const Center(child: Text('Details not available')),
       );
     }
-    
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-        foregroundColor: Color(0xFFffffff),
-        title: Text('$brand $model',style: TextStyle(color: Colors.white)),
+        foregroundColor: Colors.white,
+        title: Text('$brand $model', style: const TextStyle(color: Colors.white)),
         elevation: 0,
-        actions: [
-          //dont delete
-          // IconButton(
-          //   icon: const Icon(Icons.favorite_border),
-          //   onPressed: () {
-          //     ScaffoldMessenger.of(context).showSnackBar(
-          //       const SnackBar(content: Text('Added to favorites')),
-          //     );
-          //   },
-          // ),
-        ],
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Hero image section with zoom effect
             SizedBox(
-              height: 250, // Increased height for better visibility
+              height: 250,
               width: double.infinity,
               child: Hero(
                 tag: 'car-${brand.toLowerCase()}-${model.toLowerCase()}',
                 child: Image.asset(
                   details['image']!,
                   width: double.infinity,
-                  fit: BoxFit.cover, // Zoomed effect with cover fit
+                  fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) {
-                    // Return placeholder on error
                     return Container(
                       color: Colors.grey[200],
                       child: Column(
@@ -68,8 +55,6 @@ class CarDetailScreen extends StatelessWidget {
                 ),
               ),
             ),
-            
-            // Car details part
             Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
@@ -82,7 +67,7 @@ class CarDetailScreen extends StatelessWidget {
                         child: Text(
                           '$brand $model',
                           style: const TextStyle(
-                            fontSize: 26, 
+                            fontSize: 26,
                             fontWeight: FontWeight.bold,
                             letterSpacing: -0.5,
                           ),
@@ -91,17 +76,14 @@ class CarDetailScreen extends StatelessWidget {
                       Text(
                         details['price']!,
                         style: const TextStyle(
-                          fontSize: 20, 
+                          fontSize: 20,
                           fontWeight: FontWeight.w600,
                           color: Colors.blue,
                         ),
                       ),
                     ],
                   ),
-                  
                   const SizedBox(height: 16),
-                  
-                  // Description card
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
@@ -142,10 +124,7 @@ class CarDetailScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  
                   const SizedBox(height: 24),
-                  
-                  // Contact button
                   SizedBox(
                     width: double.infinity,
                     height: 50,
@@ -169,10 +148,7 @@ class CarDetailScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  
                   const SizedBox(height: 16),
-                  
-                  // Test drive option
                   OutlinedButton(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(

@@ -101,51 +101,84 @@ class HomeScreen extends StatelessWidget {
               "Find a Great Deal",
               style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Colors.white),
             ),
-            SizedBox(height: 45), // 2l masafa been 2l box w find great deal
+            SizedBox(height: 45),
             Center(
               child: Container(
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text("Shop By", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                    SizedBox(height: 16),// 2l masafa been 2l Shop by w Model search
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => BrandsScreen()),
-                        );
-                      },
-                      child: Text(
-                        "Model Search",
-                        style: TextStyle(color: Colors.white,fontSize: 16),
+                    SizedBox(height: 16),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.blue.shade700,
+                            Colors.blue.shade400,
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
                       ),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                        minimumSize: Size(double.infinity, 50),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => BrandsScreen()),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          shadowColor: Colors.transparent,
+                          minimumSize: Size(double.infinity, 50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        child: Text(
+                          "Model Search",
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
                       ),
                     ),
-                    SizedBox(height: 17),// 2l masafa been 2l Model search w Category search
-                    ElevatedButton(
-                     onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => CarTypesPage()),
-                        );
-                      },
-                      child: Text(
-                        "Category Search",
-                        style: TextStyle(color: Colors.white,fontSize: 16),
+                    SizedBox(height: 17),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.blue.shade700,
+                            Colors.blue.shade400,
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
                       ),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                        minimumSize: Size(double.infinity, 50),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => CarTypesPage()),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          shadowColor: Colors.transparent,
+                          minimumSize: Size(double.infinity, 50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        child: Text(
+                          "Category Search",
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
                       ),
                     ),
                   ],
@@ -158,7 +191,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
 // باقي الصفحات في شريط التنقل السفلي
 
 // class ResearchScreen extends StatelessWidget {
